@@ -43,7 +43,7 @@ app.post("/get-video", (req, res) => {
     } else {
       // Đã duyệt qua tất cả các video ID, dừng interval
       clearInterval(intervalId);
-      res.send(arr).json()
+      res.send({data:arr,status_code:200})
       // arr = JSON.stringify(arr)
       // fs.writeFileSync('./result/'+userName+'.json',arr);
       console.error(`Success fetching video !!`);
