@@ -19,7 +19,7 @@ app.post("/get-video", (req, res) => {
   const userName = req.body.name;
 
   // let rawdata = fs.readFileSync(`./data/${userName}.json`);
-  let ids = JSON.parse(req.body).ids
+  let ids = req.body.ids
   let arr = [];
   const callApi = async (userName, id) => {
     const fetchVideo = await TikTokScraper.video(`https://www.tiktok.com/@${userName}/video/${id}`, true);
